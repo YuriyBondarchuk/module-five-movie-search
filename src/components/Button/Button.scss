@@ -1,0 +1,36 @@
+.button {
+    padding: 5px 15px;
+    background-color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: .3s ease-in-out;
+    border: 1px solid transparent;
+    &:hover {
+        background-color: rgba(255, 255, 255, .5);
+        color: white;
+    }
+    &-main {
+        background-color: rgba(var(--main-color), 1);
+        color: white;
+        padding: 10px;
+        width: 100%;
+        &:hover {
+            background-color: rgba(255, 255, 255, .5);
+            color: rgba(var(--main-color), 1);
+            border: 1px solid rgba(var(--main-color), 1);
+        }
+    }
+    &-secondary {
+        background-color: rgba(var(--third-color), 1);
+        color: rgba(var(--main-color), 1);
+        padding: 10px;
+        width: 100%;
+        &:hover {
+            background-color: rgba(255, 255, 255, .5);
+            color: rgba(var(--main-color), 1);
+            border: 1px solid rgba(var(--main-color), 1);
+        }
+    }
+}

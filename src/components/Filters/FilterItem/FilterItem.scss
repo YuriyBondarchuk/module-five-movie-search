@@ -1,0 +1,27 @@
+.filter-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    &-active {
+        .filter-item-top {
+            margin-bottom: 10px;
+        }
+    }
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h3 {
+            font-weight: 600;
+        }
+    }
+    &-arrow {
+        transition: .3s ease-in-out;
+        &-active {
+            transform: rotate(180deg);
+        }
+    }
+    &-content {
+
+    }
+}

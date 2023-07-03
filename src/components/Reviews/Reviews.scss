@@ -1,0 +1,54 @@
+.review {
+    &-title {
+        font-weight: 600;
+        font-size: 1.4em;
+        margin-bottom: 20px;
+        span {
+            font-weight: 400;
+            opacity: 0.4;
+        };
+    }
+    &-item {
+        width: 100%;
+        background: #fff;
+        border-radius: var(--imageBorderRadius);
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        padding: 12px 20px;
+        color: #000;
+        border: 1px solid rgba(var(--lightGrey), 1);
+        box-sizing: border-box;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    &-top {
+        width: 100%;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    &-bottom {
+        width: 100%;
+        p {
+            line-height: 20px;
+        }
+    }
+    &-autor-info {
+        p {
+            font-weight: 600;
+            span {
+                font-weight: 400;
+            }
+        }
+    }
+    &-public-info {
+        p {
+            font-weight: 600;
+            span {
+                font-weight: 400;
+            }
+        }
+    }
+}

@@ -1,7 +1,6 @@
 import { AxiosError, AxiosResponse } from "axios";
-import { ErrorHttpResponse, SuccessHttpResponse } from "../../interfaces";
 
-export const setResponseData = (response: AxiosResponse<any, any>): SuccessHttpResponse | ErrorHttpResponse => {
+export const setResponseData = (response: AxiosResponse<any, any>) => {
     if (response instanceof AxiosError) {
         return {
             message: response.message,

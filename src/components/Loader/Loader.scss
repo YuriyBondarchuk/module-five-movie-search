@@ -1,0 +1,10 @@
+.loader {
+    text-align: center;
+    margin: 0 auto;
+    .m-custom-color-main {
+        color: rgba(var(--main-color), 1) !important;
+    }
+    .m-custom-color-secondary {
+        color: rgba(var(--third-color), 1) !important;
+    }
+}

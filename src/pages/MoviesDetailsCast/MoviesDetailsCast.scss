@@ -1,0 +1,12 @@
+.movie-cast{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    &-panel {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        min-width: 200px;
+    }
+}

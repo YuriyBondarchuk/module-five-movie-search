@@ -1,6 +1,6 @@
-export type SuccessHttpResponse =  {
-    data: any,
-    status: number
+export interface SuccessHttpResponse<T> {
+    data: T;
+    status: number;
 }
 
 export interface ErrorHttpResponse {

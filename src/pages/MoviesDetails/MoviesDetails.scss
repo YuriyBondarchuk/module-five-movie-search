@@ -1,0 +1,98 @@
+.movie {
+    &-details {
+        &-top {
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 30px 15px;
+            position: relative;
+            z-index: 1;
+            &::after {
+                content: '';
+                height: 100%;
+                width: 100%;
+                background-color: rgba(0,0,0,.7);
+                position: absolute;
+                top: 0;
+                z-index: -1;
+                left: 0;
+            }
+            &-container{
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            }
+        }
+        &-companies {
+            padding: 5px;
+            border-radius: 5px;
+            background-color: white;
+            display: inline-block;
+            gap: 5px;
+            img {
+                width: auto;
+                max-width: 30px;
+            }
+            &-list {
+                display: flex;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+        &-block {
+            margin-top: 10px;
+        }
+        &-poster{
+            flex-basis: 300px;
+            img {
+                width: 100%;
+                max-width: 300px;
+            
+                height: 450px;
+                border-radius: 5px;
+                overflow: hidden;
+                object-fit: cover;
+            }
+        }
+        &-info {
+            flex-shrink: 11;
+            color: white;
+        }
+        &-line {
+            display: flex;
+            gap: 5px;
+        }
+        &-title {
+            font-weight: 700;
+            color: white;
+            font-size: 36px;
+            // margin-bottom: 20px;
+            span {
+                opacity: 0.8;
+                font-weight: 400;
+                font-size: 28px;
+            }
+        }
+        &-overview {
+            line-height: 20px;
+            max-width: 700px;
+        }
+        &-tagline {
+            margin-bottom: 0;
+            font-size: 1.1em;
+            font-weight: 400;
+            font-style: italic;
+            opacity: 0.7;
+            // margin-bottom: 20px;
+        }
+    } 
+    &-section {
+        &-caption {
+            font-weight: 600;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+    }
+}

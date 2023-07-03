@@ -1,0 +1,15 @@
+.tab {
+    &-header {
+        border: 1px solid rgba(var(--lightGrey), 1);
+        box-sizing: border-box;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        gap: 15px;
+
+    }
+    &-item {
+        cursor: pointer;
+    }
+}

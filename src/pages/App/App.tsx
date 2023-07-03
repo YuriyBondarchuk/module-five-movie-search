@@ -1,19 +1,51 @@
-import React from 'react';
+import React, { Suspense, useCallback, useEffect } from 'react';
 import './App.scss';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { getMogieCredits, getMogieDetail, getMogieReviews, getMogiesTrending } from '../../shared/services';
-import { TrendingType } from '../../shared/enums';
+import { Auth, DashboardLayer, Home, Login, Logout, MovieDetails, MovieDetailsCast, MovieDetailsReviews, Movies, MoviesList, NotFound, getLocalStorage, loadConfiguration } from '../../shared/services';
+import { AppRouteMap } from '../../shared/enums';
+import {BrowserRouter, Route, Routes, useBeforeUnload} from 'react-router-dom';
+import Loader from '../../components/Loader/Loader';
 
 function App() {
-  // getMogiesTrending(TrendingType.day).then(res => console.log(res))
-  // getMogieDetail(385687).then(res => console.log('detail',res))
-  // getMogieReviews(385687).then(res => console.log('rew', res))
-  // getMogieCredits(385687).then(res => console.log('cred', res))
+  const [loadApp, setLoadApp] = React.useState<boolean>(false);
+
+  useBeforeUnload(
+    useCallback(() => {
+      setLoadApp(true);
+    }, [loadApp])
+  );
+
+  useEffect(() => {
+    if(!getLocalStorage('config')) {
+      loadConfiguration()
+    }
+  }, [loadApp])
+
   return (
-    <div className="App">
+    <>
+      <BrowserRouter>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path={AppRouteMap.home} element={<DashboardLayer />}>
+              <Route index element={<Home />} />
+              <Route path={AppRouteMap.movies} element={<Movies />} >
+                <Route index element={<MoviesList />} />
+                <Route path={AppRouteMap.movieDetails} element={<MovieDetails />} />
+                <Route path={AppRouteMap.movieCast} element={<MovieDetailsCast />} />
+                <Route path={AppRouteMap.movieReviews} element={<MovieDetailsReviews />} />
+              </Route>
+            </Route>
+            <Route path={AppRouteMap.notFound} element={<NotFound />} />
+            <Route path={AppRouteMap.auth} element={<Auth />} >
+              <Route index element={<Login />} />
+              <Route path={AppRouteMap.logout} element={<Logout />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
       <ToastContainer />
-    </div>
+    </>
   );
 }
 

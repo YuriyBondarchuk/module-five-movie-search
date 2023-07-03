@@ -1,7 +1,15 @@
-import './Auth.scss';
+
+import { Outlet } from "react-router-dom";
+import "./Auth.scss";
+import { Suspense } from "react";
+import Loader from "../../components/Loader/Loader";
 
 function Auth() {
-    return ( <div>Auth</div> );
+    return <div>
+        <Suspense fallback={<Loader />}>
+            <Outlet />
+        </Suspense>
+    </div>;
 }
 
 export default Auth;

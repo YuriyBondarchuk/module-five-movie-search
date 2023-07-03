@@ -1,0 +1,11 @@
+.list {
+    &-title {
+        font-weight: 600;
+        font-size: 1.4em;
+        margin-bottom: 20px;
+        span {
+            font-weight: 400;
+            opacity: .4;
+        }
+    }
+}
